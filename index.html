@@ -59,12 +59,19 @@
     students = ["Danny", "Aiden", "Millie"];
     studentTagList = {};
 
+
+    sessions = ["Monday-AM", "Tuesday-AM", "Wednesday-AM", "Thursday-AM", "Monday-PM", "Tuesday-PM", "Wednesday-PM", "Thursday-PM"];
+    interimOptions = ["Cooking", "Makerspace", "Robotics", "Coding", "Other"];
+    interimSessionDB = {};
+
+
+
     studentRow = 0;
     studentSelect = document.getElementById("studentSelect");
+
+
     for (let student of students){
         createStudentTags(student);
-
-
     }
 
     let studentTags = document.getElementById("studentTags");
@@ -102,7 +109,6 @@
 
     studentSelect.addEventListener("change", function(){
         console.log(this.value);
-        // let student = this.value;
         studentTags.innerHTML = "";
         for (let tag of studentTagList[this.value]){
             
@@ -113,13 +119,12 @@
         }
     })
 
-    sessions = ["Monday_AM", "Tuesday_AM", "Wednesday_AM", "Thursday_AM", "Monday_PM", "Tuesday_PM", "Wednesday_PM", "Thursday_PM"];
 
-    interimOptions = ["Cooking", "Makerspace", "Robotics", "Coding", "Other"];
-    
+    // INTERIM OPTIONS    
     for (let iName of interimOptions){
         insertInterimOptions(iName);
     }
+    console.log("interimSessionDB", interimSessionDB);
 
     function insertInterimOptions(interimOption){
         let div = document.createElement("div");
@@ -133,8 +138,11 @@
         calendarGrid.id = "calendar_" + interimOption;
         calendarGrid.classList.add("calendarGrid");
 
+        interimSessionDB[interimOption] = {};
+
         for (let sName of sessions) {
             insertSessionDiv(sName, interimOption, calendarGrid);
+            interimSessionDB[interimOption][sName] = [];
         }
 
         div.appendChild(calendarGrid);
@@ -175,19 +183,60 @@
         ev.preventDefault();
 
         targetData = ev.target.id.split("_");
+
+        if ( ev.target.id === "studentTags"){
+            // Get the id of the target and add the moved element to the target's DOM
+            const tagID = ev.dataTransfer.getData("application/my-app");
+
+            ev.target.appendChild(document.getElementById(tagID));
+
+            let info = tagID.split("_");
+            let student = info[0];
+            console.log("Drop: ", student, tagID, ev.target.id);
+            
+
+            //remove from interimSessionDB
+            for (let iOpt of interimOptions){
+                for (let session of sessions){
+                    let index = interimSessionDB[iOpt][session].indexOf(tagID);
+                    if (index !== -1){
+                        interimSessionDB[iOpt][session].splice(index, 1);
+                    }
+                }
+            }
+
+            //change location in student tag list
+            for (let i = 0; i < nSessions; i++) {
+                if (studentTagList[student][i]['div'].id === tagID) {
+                    studentTagList[student][i]['location_id'] = "studentTags";
+                }
+                // console.log(studentTagList[student][i] )
+            }
+
+        }
+
         if (targetData[0] === 'session'){
             // Get the id of the target and add the moved element to the target's DOM
-            const data = ev.dataTransfer.getData("application/my-app");
+            const tagID = ev.dataTransfer.getData("application/my-app");
 
-            ev.target.appendChild(document.getElementById(data));
+            ev.target.appendChild(document.getElementById(tagID));
 
-            let info = data.split("_");
+            let info = tagID.split("_");
             let student = info[0];
-            console.log("Drop: ", student, data, ev.target.id)
+            console.log("Drop: ", student, tagID, ev.target.id);
+            
+            //add to interimSessionDB
+            let interimOpt = targetData[1];
+            let sessionTime = targetData[2];
+
+            console.log("interimOpt:", interimOpt)
+            console.log("sessionTime", sessionTime)
+            interimSessionDB[interimOpt][sessionTime].push(tagID);
+            console.log(interimSessionDB)
 
             for (let i = 0; i < nSessions; i++) {
-                if (studentTagList[student][i]['div'].id === data) {
-                    studentTagList[student][i]['location_id'] = "x";
+                if (studentTagList[student][i]['div'].id === tagID) {
+                    studentTagList[student][i]['location_id'] = ev.target.id;
                 }
                 // console.log(studentTagList[student][i] )
             }
