@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interim Planner</title>
+    <style id="studentStyles"></style>
     <style>
         .interimSession {
-            /* width: 20%;
-            min-height: 5em; */
+            display: inline-block;
             border: 3px inset red;
         }
         .calendarGrid {
@@ -16,28 +16,26 @@
             grid-template-rows: repeat(2, minmax(5em, auto)); 
         }
         .studentTag {
-            border: 1px solid black;
-            width: fit-content;
-            padding: 2px;
+            border: 3px outset gray;
+            border-radius: 5px;
+            width: 10em;
             border-radius: 2px;
-            background-color: greenyellow;
             margin: 2px;
+            text-align: center;
+            vertical-align: middle;
         }
         #studentTags {
             display: grid;
         }
     </style>
+    
 </head>
 <body>
-    <!-- <div class="student" draggable="true" id="Danny" ondragstart="dragstartHandler(event)">Danny</div>
-    <div class="student" draggable="true" id="Aiden" ondragstart="dragstartHandler(event)">Aiden</div>
-    <div class="student" draggable="true" id="Millie" ondragstart="dragstartHandler(event)">Millie</div> -->
 
-    <div id="studentTags"></div>
-
+    <!-- Pick student -->
     <label for="studentSelect">Choose a Student:</label>
-    <select id="studentSelect">
-    </select>
+    <select id="studentSelect"></select>
+    <div id="studentTags"></div>
 
 
     <!-- calender grids -->
@@ -45,10 +43,6 @@
 
     </div>
 
-    <!-- <div id="calendarGrid">
-        <!-- <div id="Monday_AM" class="interimSession" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
-        <div id="Monday_PM" class="interimSession" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div> -->
-    </div> -->
 
 </body>
 
@@ -88,6 +82,16 @@
             // div.style.gridRow = studentRow;
             div.style.gridColumn = i+1;
 
+            // create student sytle class
+            let styleName = `${student}_style`;
+            styleDiv = document.getElementById("studentStyles");
+            styleDiv.sheet.insertRule(`
+                .${styleName} {
+                    background-color: yellow;
+                }
+            `);
+            div.classList.add(styleName);
+
             
             // 
             // studentTags.appendChild(div);
@@ -117,6 +121,8 @@
                 studentTags.append(tag["div"]);
             }
         }
+        setActiveBackgroundColor(this.value);
+        
     })
 
 
@@ -166,17 +172,13 @@
 
 
 
-
-    // function dragstartHandler(ev) {
-    //     // Add the target element's id to the data transfer object
-    //     ev.dataTransfer.setData("application/my-app", ev.target.id);
-    //     ev.dataTransfer.effectAllowed = "move";
-    // }
-
     document.addEventListener("dragstart", function(ev){
         // Add the target element's id to the data transfer object
         ev.dataTransfer.setData("application/my-app", ev.target.id);
         ev.dataTransfer.effectAllowed = "move";
+        let student = ev.target.id.split("_")[0];
+        
+        // setClassBackgroundColor(student, 'tomato');
     })
 
     document.addEventListener("drop", function (ev) {
@@ -193,6 +195,9 @@
             let info = tagID.split("_");
             let student = info[0];
             console.log("Drop: ", student, tagID, ev.target.id);
+
+
+            //setClassBackgroundColor(student, 'yellow');
             
 
             //remove from interimSessionDB
@@ -224,6 +229,8 @@
             let info = tagID.split("_");
             let student = info[0];
             console.log("Drop: ", student, tagID, ev.target.id);
+            //setClassBackgroundColor(student, 'yellow');
+            
             
             //add to interimSessionDB
             let interimOpt = targetData[1];
@@ -249,6 +256,21 @@
         ev.preventDefault();
         ev.dataTransfer.dropEffect = "move";
     })
+
+    function setActiveBackgroundColor(student){
+        console.log("Changing style for: ", student);
+        let className = student + "_" + "style";
+        for (let rule of document.getElementById("studentStyles").sheet.cssRules) {
+            if (rule.selectorText === `.${className}`) {
+                rule.style.backgroundColor = "yellow";
+                rule.style.padding = "12px";
+            } 
+            else {
+                rule.style.backgroundColor = "tomato";
+                rule.style.padding = '2px';
+            }
+        }
+    }
  
 
 </script>
