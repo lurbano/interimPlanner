@@ -1,0 +1,68 @@
+{
+  "Cooking": {
+    "Monday-AM": [
+      "Aiden_1",
+      "Millie_2",
+      "Danny_1"
+    ],
+    "Tuesday-AM": [
+      "Millie_3"
+    ],
+    "Wednesday-AM": [
+      "Aiden_5",
+      "Millie_4"
+    ],
+    "Thursday-AM": [
+      "Millie_5"
+    ],
+    "Monday-PM": [],
+    "Tuesday-PM": [
+      "Aiden_3",
+      "Danny_3"
+    ],
+    "Wednesday-PM": [],
+    "Thursday-PM": [
+      "Aiden_6"
+    ]
+  },
+  "Makerspace": {
+    "Monday-AM": [],
+    "Tuesday-AM": [],
+    "Wednesday-AM": [],
+    "Thursday-AM": [],
+    "Monday-PM": [],
+    "Tuesday-PM": [],
+    "Wednesday-PM": [],
+    "Thursday-PM": []
+  },
+  "Robotics": {
+    "Monday-AM": [],
+    "Tuesday-AM": [],
+    "Wednesday-AM": [],
+    "Thursday-AM": [],
+    "Monday-PM": [],
+    "Tuesday-PM": [],
+    "Wednesday-PM": [],
+    "Thursday-PM": []
+  },
+  "Coding": {
+    "Monday-AM": [],
+    "Tuesday-AM": [],
+    "Wednesday-AM": [],
+    "Thursday-AM": [],
+    "Monday-PM": [],
+    "Tuesday-PM": [],
+    "Wednesday-PM": [],
+    "Thursday-PM": []
+  },
+  "Other": {
+    "Monday-AM": [],
+    "Tuesday-AM": [],
+    "Wednesday-AM": [],
+    "Thursday-AM": [],
+    "Monday-PM": [],
+    "Tuesday-PM": [],
+    "Wednesday-PM": [],
+    "Thursday-PM": []
+  }
+}
