@@ -35,6 +35,16 @@
         #studentTags {
             display: grid;
         }
+        .mainButton {
+            font-size: large;
+            font-weight:bold;
+            padding: 10px;
+            margin: 10px;
+            background-color: lightgreen;
+        }
+        .mainButton:hover {
+            background-color:greenyellow;
+        }
     </style>
     
 </head>
@@ -58,9 +68,12 @@
 
     </div>
 
-
+    <!-- generate individual schedules -->
+    <input type="button" id="individualSchedules" value="Generate Individual Schedules"  class="mainButton">
+    <div id="studentSchedules"></div>
 </body>
 
+<script src="data.js"></script>
 <script src="interimPlanner.js"></script>
 
 </html>

@@ -1,12 +1,12 @@
 nSessions = 8;
 studentGrid = document.getElementById("studentTags");
 // studentGrid.style.gridTemplateColumns = `repeat(${nSessions}, 1fr)`;
-students = ["Danny", "Aiden", "Millie"];
+// students = ["Danny", "Aiden", "Millie"];
 studentTagList = {};
 
 
-sessions = ["Monday-AM", "Tuesday-AM", "Wednesday-AM", "Thursday-AM", "Monday-PM", "Tuesday-PM", "Wednesday-PM", "Thursday-PM"];
-interimOptions = ["Cooking", "Makerspace", "Robotics", "Coding", "Other"];
+// sessions = ["Monday-AM", "Tuesday-AM", "Wednesday-AM", "Thursday-AM", "Monday-PM", "Tuesday-PM", "Wednesday-PM", "Thursday-PM"];
+// interimOptions = ["Cooking", "Makerspace", "Robotics", "Coding", "Other"];
 interimSessionDB = {};
 
 
@@ -296,7 +296,7 @@ fileInput.addEventListener('change', (event) => {
           
           loadInterimSessionDB(jsonData);
           
-          output.textContent = JSON.stringify(jsonData, null, 2); // Display the JSON data in a formatted way
+          // output.textContent = JSON.stringify(jsonData, null, 2); // Display the JSON data in a formatted way
         } catch (error) {
           output.textContent = 'Error parsing JSON: ' + error.message; // Handle JSON parsing errors
         }
@@ -332,4 +332,57 @@ function loadInterimSessionDB(db){
             }
         });
       });
+}
+
+
+indvSchedules = document.getElementById("individualSchedules");
+indvSchedules.addEventListener("click", generateIndividualSchedules);
+
+function generateIndividualSchedules(){
+    let studentSchedules = document.getElementById("studentSchedules");
+    for (let student of students){
+    
+    // let student = "Millie";
+        let div = document.createElement("div");
+        div.id = student + "_schedule";
+    
+        let titleDiv = document.createElement("div");
+        titleDiv.innerHTML = `<h2>${student}</h2>`;
+        div.appendChild(titleDiv);
+    
+        let calendarGrid = document.createElement("div");
+        calendarGrid.id = student + "_calendar";
+        calendarGrid.classList.add("calendarGrid");
+
+        for (let sName of sessions) {
+            insertSessionDiv(sName, student, calendarGrid);
+        }
+    
+        div.appendChild(calendarGrid);
+
+        studentSchedules.appendChild(div);
+
+
+        //add student into grid
+        Object.entries(interimSessionDB).forEach(([interimOpt, optVal]) => {
+           // console.log(`${interimOpt}: ${optVal}`);
+            Object.entries(optVal).forEach(([sessionTime, sessionVal]) => {
+                //console.log(`  ${sessionTime}: ${sessionVal}`)
+                let targetID = `session_${student}_${sessionTime}`;
+                // let sDiv = document.getElementById(targetID)
+                for (let tagID of sessionVal){
+                    
+                    if (student ===  tagID.split('_')[0]){
+                        console.log("Student:", student);
+                        console.log(   tagID, interimOpt, sessionTime, targetID);
+                        let tDiv = document.getElementById(targetID);
+                        tDiv.innerHTML = `${interimOpt}`;
+                        tDiv.style.backgroundColor = 'lightGreen';
+                    }
+                    
+            
+                }
+            });
+          });
+    }
 }
