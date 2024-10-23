@@ -189,6 +189,16 @@ document.addEventListener("drop", function (ev) {
         let student = info[0];
         console.log("Drop: ", student, tagID, ev.target.id);
         //setClassBackgroundColor(student, 'yellow');
+
+        //remove from old location in interimSessionDB 
+        for (let iOpt of interimOptions){
+            for (let session of sessions){
+                let index = interimSessionDB[iOpt][session].indexOf(tagID);
+                if (index !== -1){
+                    interimSessionDB[iOpt][session].splice(index, 1);
+                }
+            }
+        }
         
         
         //add to interimSessionDB
@@ -197,17 +207,6 @@ document.addEventListener("drop", function (ev) {
 
         addStudentToSession(interimOpt, sessionTime, tagID, ev.target.id)
         
-        // console.log("interimOpt:", interimOpt)
-        // console.log("sessionTime", sessionTime)
-        // interimSessionDB[interimOpt][sessionTime].push(tagID);
-        // console.log(interimSessionDB)
-
-        // for (let i = 0; i < nSessions; i++) {
-        //     if (studentTagList[student][i]['div'].id === tagID) {
-        //         studentTagList[student][i]['location_id'] = ev.target.id;
-        //     }
-            
-        // }
     }
     
 })

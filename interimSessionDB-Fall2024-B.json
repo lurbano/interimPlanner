@@ -1,0 +1,310 @@
+{
+  "College-Prep": {
+    "Monday-AM": [
+      "Lily_1"
+    ],
+    "Tuesday-AM": [
+      "Lily_3"
+    ],
+    "Wednesday-AM": [
+      "Lily_5"
+    ],
+    "Thursday-AM": [
+      "Lily_7"
+    ],
+    "Monday-PM": [],
+    "Tuesday-PM": [],
+    "Wednesday-PM": [],
+    "Thursday-PM": []
+  },
+  "Cooking": {
+    "Monday-AM": [
+      "Danny_2"
+    ],
+    "Tuesday-AM": [
+      "Danny_4",
+      "Millie_3",
+      "Aiden_3",
+      "Hope_2",
+      "Trinity_2",
+      "Cadie_2",
+      "Anneliese_2",
+      "Laya_2",
+      "Laya_2"
+    ],
+    "Wednesday-AM": [
+      "Millie_5",
+      "Trinity_3",
+      "Mateo_7",
+      "Sofia-C_6"
+    ],
+    "Thursday-AM": [
+      "Danny_6",
+      "Millie_6",
+      "Aiden_8",
+      "Trinity_8",
+      "Cadie_8",
+      "Laya_8",
+      "Sofia-C_7"
+    ],
+    "Monday-PM": [
+      "Millie_1",
+      "Aiden_2",
+      "Hope_1",
+      "Trinity_1",
+      "Cadie_1",
+      "Anneliese_1",
+      "Laya_1",
+      "Laya_1",
+      "Mateo_2",
+      "Sofia-C_4",
+      "Nina_2"
+    ],
+    "Tuesday-PM": [
+      "Laya_2",
+      "Mateo_4",
+      "Mia_3",
+      "Sofia-C_5",
+      "Nina_4"
+    ],
+    "Wednesday-PM": [
+      "Aiden_5",
+      "Hope_3",
+      "Anneliese_5",
+      "Laya_3",
+      "Laya_3",
+      "Mia_6",
+      "Sofia-C_6",
+      "Nina_6"
+    ],
+    "Thursday-PM": [
+      "Trinity_7",
+      "Cadie_7",
+      "Laya_6",
+      "Mateo_5",
+      "Sofia-C_7",
+      "Nina_8"
+    ]
+  },
+  "Makerspace": {
+    "Monday-AM": [
+      "Thomas_2",
+      "Clara_2",
+      "Millie_2",
+      "Aiden_1",
+      "Hope_6",
+      "Trinity_4",
+      "Cadie_4",
+      "Anneliese_3",
+      "Laya_7",
+      "Mia_2"
+    ],
+    "Tuesday-AM": [
+      "Thomas_4",
+      "Clara_4",
+      "Mia_4"
+    ],
+    "Wednesday-AM": [
+      "Thomas_6",
+      "Clara_6",
+      "Danny_8",
+      "Aiden_6",
+      "Hope_5",
+      "Cadie_6",
+      "Anneliese_6",
+      "Laya_5",
+      "Oliver-D_5",
+      "Andrew-K_6",
+      "Mia_5"
+    ],
+    "Thursday-AM": [
+      "Thomas_8",
+      "Clara_8",
+      "Hope_8",
+      "Anneliese_7",
+      "Mia_7"
+    ],
+    "Monday-PM": [
+      "Laya_1",
+      "Oliver-D_2",
+      "Andrew-K_2",
+      "Mia_1",
+      "Lily_2"
+    ],
+    "Tuesday-PM": [
+      "Millie_4",
+      "Aiden_4",
+      "Hope_4",
+      "Trinity_5",
+      "Cadie_3",
+      "Anneliese_4",
+      "Laya_2",
+      "Laya_4",
+      "Oliver-D_4",
+      "Andrew-K_4",
+      "Lily_4"
+    ],
+    "Wednesday-PM": [
+      "Millie_7",
+      "Trinity_6",
+      "Cadie_5",
+      "Laya_3",
+      "Lily_6"
+    ],
+    "Thursday-PM": [
+      "Millie_8",
+      "Aiden_7",
+      "Hope_7",
+      "Anneliese_8",
+      "Laya_6",
+      "Oliver-D_8",
+      "Andrew-K_7",
+      "Mia_8",
+      "Lily_8"
+    ]
+  },
+  "Robotics": {
+    "Monday-AM": [
+      "Henry_3",
+      "Andrew-K_1",
+      "Mateo_1",
+      "Oliver-D_1"
+    ],
+    "Tuesday-AM": [
+      "Collier_2",
+      "Andrew-K_3",
+      "Mateo_3",
+      "Oliver-D_3"
+    ],
+    "Wednesday-AM": [
+      "Henry_5"
+    ],
+    "Thursday-AM": [
+      "Collier_8",
+      "Andrew-K_8",
+      "Mateo_8",
+      "Oliver-D_7"
+    ],
+    "Monday-PM": [
+      "Henry_4"
+    ],
+    "Tuesday-PM": [
+      "Collier_3"
+    ],
+    "Wednesday-PM": [
+      "Henry_6",
+      "Andrew-K_5",
+      "Mateo_6",
+      "Oliver-D_6"
+    ],
+    "Thursday-PM": []
+  },
+  "Coding": {
+    "Monday-AM": [],
+    "Tuesday-AM": [
+      "Collier_2",
+      "Henry_2"
+    ],
+    "Wednesday-AM": [],
+    "Thursday-AM": [
+      "Collier_6",
+      "Henry_8"
+    ],
+    "Monday-PM": [],
+    "Tuesday-PM": [
+      "Collier_3",
+      "Henry_1"
+    ],
+    "Wednesday-PM": [],
+    "Thursday-PM": [
+      "Collier_8",
+      "Henry_7"
+    ]
+  },
+  "Museum-and-Sports-Trips": {
+    "Monday-AM": [],
+    "Tuesday-AM": [],
+    "Wednesday-AM": [],
+    "Thursday-AM": [],
+    "Monday-PM": [
+      "Danny_1",
+      "Clara_1",
+      "Thomas_1"
+    ],
+    "Tuesday-PM": [
+      "Danny_3",
+      "Clara_3",
+      "Thomas_3"
+    ],
+    "Wednesday-PM": [
+      "Danny_5",
+      "Clara_5",
+      "Thomas_5"
+    ],
+    "Thursday-PM": [
+      "Danny_7",
+      "Clara_7",
+      "Thomas_7"
+    ]
+  },
+  "Independent-Projects": {
+    "Monday-AM": [
+      "Ryan_1",
+      "Oliver-L_1"
+    ],
+    "Tuesday-AM": [
+      "Ryan_4",
+      "Oliver-L_4"
+    ],
+    "Wednesday-AM": [
+      "Ryan_6",
+      "Oliver-L_6"
+    ],
+    "Thursday-AM": [
+      "Ryan_7",
+      "Oliver-L_7"
+    ],
+    "Monday-PM": [
+      "Ryan_2",
+      "Oliver-L_2"
+    ],
+    "Tuesday-PM": [
+      "Ryan_5",
+      "Oliver-L_5"
+    ],
+    "Wednesday-PM": [
+      "Ryan_3",
+      "Oliver-L_3"
+    ],
+    "Thursday-PM": [
+      "Ryan_8",
+      "Oliver-L_8"
+    ]
+  },
+  "College-Visits": {
+    "Monday-AM": [
+      "Sofia-C_1",
+      "Nina_1",
+      "Mary_1"
+    ],
+    "Tuesday-AM": [
+      "Sofia-C_3",
+      "Nina_3",
+      "Mary_3"
+    ],
+    "Wednesday-AM": [
+      "Sofia-C_2",
+      "Nina_5",
+      "Mary_5"
+    ],
+    "Thursday-AM": [
+      "Sofia-C_8",
+      "Nina_7",
+      "Mary_7"
+    ],
+    "Monday-PM": [],
+    "Tuesday-PM": [],
+    "Wednesday-PM": [],
+    "Thursday-PM": []
+  }
+}
